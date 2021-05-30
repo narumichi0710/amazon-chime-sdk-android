@@ -40,6 +40,7 @@ if (localPropertiesFile.exists()) {
     }
 }
 
+
 allprojects {
     repositories {
         google()
