@@ -18,6 +18,13 @@ android {
         targetSdkVersion project.ext.chimeTargetSdkVersion
         versionCode 1
         versionName "1.0"
+
+        externalNativeBuild {
+            cmake {
+                arguments "-DCMAKE_BUILD_TYPE=Release" ,"-DANDROID_STL=c++_shared", '-DANDROID_TOOLCHAIN=clang'
+                cppFlags ""
+            }
+        }
     }
     buildTypes {
         release {
@@ -33,6 +40,8 @@ android {
 
 
 dependencies {
+    implementation(name: 'amazon-chime-sdk', ext: 'aar')
+    implementation(name: 'amazon-chime-sdk-media', ext: 'aar')
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'

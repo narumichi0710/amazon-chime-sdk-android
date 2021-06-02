@@ -15,13 +15,11 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.ProgressBar
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
-import com.amazonaws.services.chime.sdk.meetings.utils.Versioning
 import com.amazonaws.services.chime.sdk.meetings.utils.logger.ConsoleLogger
 import com.amazonaws.services.chime.sdk.meetings.utils.logger.LogLevel
 import com.amazonaws.services.chime.sdkdemo.R
@@ -78,9 +76,6 @@ class HomeActivity : AppCompatActivity() {
 
         findViewById<ImageButton>(R.id.buttonContinue)?.setOnClickListener { joinMeeting() }
         findViewById<Button>(R.id.buttonDebugSettings)?.setOnClickListener { showDebugSettings() }
-
-        val versionText: TextView = findViewById(R.id.versionText) as TextView
-        versionText.text = "${getString(R.string.version_prefix)}${Versioning.sdkVersion()}"
     }
 
     private fun showToast(context: Context, msg: String) {
